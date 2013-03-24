@@ -10,4 +10,5 @@ class CreateCategories < ActiveRecord::Migration
       t.integer :category_id, :null => false
       t.integer :demot_id,    :null => false
     end
+  end
 end
