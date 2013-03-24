@@ -2,9 +2,9 @@
   %b Tittle:
   = @demot.tittle
 %p= image_tag @demot.image.url(:medium)
+= @demot.visits															
 
-  
-
+  - if can? :edit, @category 
 = link_to 'Edit', edit_demot_path(@demot)
 \|
 = link_to 'Back', demots_path

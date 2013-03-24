@@ -62,3 +62,5 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'rmagick'
 gem "paperclip", "~> 3.0"
 gem "twitter-bootstrap-rails"
+gem 'kaminari'
+gem 'paperclip-dropbox'

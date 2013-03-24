@@ -1,7 +1,14 @@
 Kwejkodemot::Application.routes.draw do
+
+  resources :categories
+
+
+  get "waiting_photos/index"
+
   resources :demots
   resources :queue, only: [ :index ]
-
+  resources :top, only: [ :index ]
+  resources :votes, only: [ :show ]
 
   devise_for :users
 

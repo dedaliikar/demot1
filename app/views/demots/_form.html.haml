@@ -12,8 +12,12 @@
   .field
     = f.label :image
     = f.file_field :image
-    .field
+  .field
     =f.label :active
     =f.check_box :active
+  .field
+    - for category in @categories
+      = check_box_tag "demot[category_ids][]", "#{category.id}", @demot.categories.include?(category)
+      = category.name
   .actions
     = f.submit 'Zapisz'

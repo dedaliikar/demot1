@@ -35,7 +35,8 @@
                 %li= link_to 'Zarejestruj się', new_user_registration_path
               %li= link_to 'Główna', root_path
               %li= link_to 'Poczekalnia', queue_index_path
-
+              %li= link_to 'Top', top_index_path
+              %li= link_to 'Kategorie', categories_path
     .container
 
       .row
@@ -44,21 +45,10 @@
           = yield
         .span3
           .well.sidebar-nav
-            %h3 Sidebar
+            %h3= "Witaj #{current_user.email}" if user_signed_in?
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              - if user_signed_in?
-                %li= link_to 'Wyloguj się', destroy_user_session_path, method: :delete
-              - else
-                %li= link_to 'Zaloguj się', new_user_session_path
-                %li= link_to 'Zarejestruj się', new_user_registration_path
-              %li= link_to 'Główna', root_path
-              %li= link_to 'Poczekalnia', queue_index_path
-    
+              -@categories.each do |category|
+                %li= link_to category.name, category    
       %footer
         %p &copy; Company 2013
-    /
-      Javascripts
-      \==================================================
-    / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
