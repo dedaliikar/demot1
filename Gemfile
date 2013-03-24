@@ -5,7 +5,6 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem "less-rails"
 
 # Gems used only for assets and not required
@@ -64,3 +63,5 @@ gem "paperclip", "~> 3.0"
 gem "twitter-bootstrap-rails"
 gem 'kaminari'
 gem 'paperclip-dropbox'
+gem 'pg', :group => :production
+gem 'mysql2', :group => :development

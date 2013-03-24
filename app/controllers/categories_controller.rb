@@ -2,23 +2,20 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
   # GET /categories
   # GET /categories.json
-  before_filter :authentificate_user|, :ecpect => [ :show ]
+  before_filter :authenticate_user!, :except => [ :show ]
   
   def index
     redirect_to root_path unless current_user.admin?
-    end
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
-    end
   end
 
   # GET /categories/new
   # GET /categories/new.json
   def new
-    end
   end
 
   # GET /categories/1/edit
